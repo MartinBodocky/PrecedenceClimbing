@@ -293,6 +293,10 @@ evaluate (UnaryNode op expr) =
             Plus -> val
             Minus -> -val
 
+-- compute, glue all together
+compute :: String -> Double
+compute str = (evaluate . precedenceClimbing . correcting ) $ tokenizer (filter (\x-> not $ isWhiteSpace x ) str) Nothing
+
 
 
 

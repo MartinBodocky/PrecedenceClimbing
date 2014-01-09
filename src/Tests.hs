@@ -39,5 +39,3 @@ unitTestsPrecedenceClimbing = [
     ("(-33^2+2)*(42-2^3)^3/2",2.1440332e7),
     ("(33^2+2)*(42-2^3)^3/2",2.1440332e7)]
 
-compute :: String -> Double
-compute str = (evaluate . precedenceClimbing . correcting ) $ tokenizer (filter (\x-> not $ isWhiteSpace x ) str) Nothing
